@@ -1,4 +1,16 @@
 // Find the maximum
+let maxOfTwoNumbers = function (num1, num2) {
+  if (num1 > num2) {
+    return num1;
+  } else {
+    return num2;
+  }
+}
+
+let biggestNum = maxOfTwoNumbers(5,10);
+console.log(biggestNum)
+
+//==========================================================================
 
 // Finding Longest Word
 const words = [
@@ -11,13 +23,52 @@ const words = [
   'crackpot'
 ];
 
+let findLongestWord = function() {
+  let largestWord = "";
+  for (let word of words) {
+    if (word.length > largestWord.length) largestWord = word;
+  }
+  return largestWord;
+ }
+ let biggerWord = findLongestWord(words)
+ console.log(biggerWord)
+
+//==========================================================================
+
+
 // Calculating a Sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
+let sumArray = function() {
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+console.log(numbers.reduce(reducer));
+}
+ sumArray(numbers)
+
+// let sumArray = function () {
+
+//   let total = 0;
+//   for (i=0; i<numbers.length; i++) {
+//     total += numbers[i];
+//   }
+//   console.log(total)
+// }
+// sumArray(numbers)
+
+//==========================================================================
+
 // Calculate the Average
 
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+
+let averageNumbers  = function() {
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+console.log(numbersAvg.reduce(reducer)/numbersAvg.length);
+}
+averageNumbers(numbersAvg)
+
+//==========================================================================
 
 // Array of Strings
 const wordsArr = [
@@ -32,6 +83,19 @@ const wordsArr = [
   'fuel',
   'palace'
 ];
+
+let averageWordLength = function(palavrasRep) {
+  let totalLength = "";
+  for (i=0; i<palavrasRep.length; i++) {
+    totalLength += palavrasRep[i]
+  }
+  console.log(totalLength.length/palavrasRep.length)
+}
+
+averageWordLength(wordsArr)
+
+//==========================================================================
+
 
 // Unique Arrays
 const wordsUnique = [
@@ -48,6 +112,16 @@ const wordsUnique = [
   'bring'
 ];
 
+let uniquifyArray = function() {
+  const uniqueSet = new Set(wordsUnique); //primeiro, cria-se um novo Set passando um array. O Set apenas aceita valores unicos, sendo que todos os duplicados serão apagados.
+  const backToArray = [...uniqueSet] // segundo, voltamos a transformar o Set num array usando "..." entre []
+  console.log(backToArray)
+}
+
+uniquifyArray(wordsUnique)
+//==========================================================================
+
+
 // Finding Elements
 const wordsFind = [
   'machine',
@@ -59,6 +133,11 @@ const wordsFind = [
   'truth',
   'disobedience'
 ];
+
+let doesWordExist = function() {
+  let findWord = "";
+  wordsFind.includes(findWord);
+}
 
 // Counting Repetition
 const wordsCount = [
