@@ -23,38 +23,45 @@ const words = [
   'crackpot'
 ];
 
-let findLongestWord = function() {
-  let largestWord = "";
-  for (let word of words) {
-    if (word.length > largestWord.length) largestWord = word;
+let findLongestWord = function(wordsArray) {
+  
+  let longestWord = '';
+
+  for (i=0; i<wordsArray.length; i++) {
+
+    if(wordsArray[i].length > longestWord.length) {
+      
+      longestWord = wordsArray[i];
+    }
   }
-  return largestWord;
- }
- let biggerWord = findLongestWord(words)
- console.log(biggerWord)
+  return longestWord;
+}
+
+console.log(findLongestWord(words))
+
 
 //==========================================================================
-
 
 // Calculating a Sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-let sumArray = function() {
-  const reducer = (accumulator, currentValue) => accumulator + currentValue;
-console.log(numbers.reduce(reducer));
-}
- sumArray(numbers)
-
-// let sumArray = function () {
-
-//   let total = 0;
-//   for (i=0; i<numbers.length; i++) {
-//     total += numbers[i];
-//   }
-//   console.log(total)
+// let sumArray = function() {
+//   const reducer = (accumulator, currentValue) => accumulator + currentValue;
+// console.log(numbers.reduce(reducer));
 // }
-// sumArray(numbers)
+//  sumArray(numbers)
+
+let sumArray = function (sum) {
+
+  let total = 0;
+
+  for (i=0; i < sum.length; i++) {
+    total += sum[i];
+  }
+  return total;
+}
+console.log(sumArray(numbers))
 
 //==========================================================================
 
@@ -62,11 +69,16 @@ console.log(numbers.reduce(reducer));
 
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-let averageNumbers  = function() {
-  const reducer = (accumulator, currentValue) => accumulator + currentValue;
-console.log(numbersAvg.reduce(reducer)/numbersAvg.length);
+let averageNumbers  = function(avg) {
+  
+  let average = 0;
+
+  for (i=0; i < avg.length; i++) {
+    average += avg[i];
+  }
+  return average/avg.length;
 }
-averageNumbers(numbersAvg)
+console.log(averageNumbers(numbersAvg))
 
 //==========================================================================
 
@@ -84,15 +96,16 @@ const wordsArr = [
   'palace'
 ];
 
-let averageWordLength = function(palavrasRep) {
-  let totalLength = "";
-  for (i=0; i<palavrasRep.length; i++) {
-    totalLength += palavrasRep[i]
+let averageWordLength = function(avglng) {
+  let averageLength = 0;
+
+  for (i=0; i<avglng.length; i++) {
+    averageLength += avglng[i].length
   }
-  console.log(totalLength.length/palavrasRep.length)
+  return averageLength/avglng.length;
 }
 
-averageWordLength(wordsArr)
+console.log(averageWordLength(wordsArr))
 
 //==========================================================================
 
@@ -112,13 +125,14 @@ const wordsUnique = [
   'bring'
 ];
 
-let uniquifyArray = function() {
-  const uniqueSet = new Set(wordsUnique); //primeiro, cria-se um novo Set passando um array. O Set apenas aceita valores unicos, sendo que todos os duplicados serão apagados.
+let uniquifyArray = function(palavrasRep) {
+  const uniqueSet = new Set(palavrasRep); //primeiro, cria-se um novo Set passando um array. O Set apenas aceita valores unicos, sendo que todos os duplicados serão apagados.
   const backToArray = [...uniqueSet] // segundo, voltamos a transformar o Set num array usando "..." entre []
-  console.log(backToArray)
+  
+  return backToArray
 }
 
-uniquifyArray(wordsUnique)
+console.log(uniquifyArray(wordsUnique))
 //==========================================================================
 
 
@@ -134,9 +148,9 @@ const wordsFind = [
   'disobedience'
 ];
 
-let doesWordExist = function() {
+let doesWordExist = function(search) {
   let findWord = "";
-  wordsFind.includes(findWord);
+  search.includes();
 }
 
 // Counting Repetition
