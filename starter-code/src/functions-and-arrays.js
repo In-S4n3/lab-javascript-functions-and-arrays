@@ -133,6 +133,9 @@ let uniquifyArray = function(palavrasRep) {
 }
 
 console.log(uniquifyArray(wordsUnique))
+
+
+
 //==========================================================================
 
 
@@ -148,10 +151,15 @@ const wordsFind = [
   'disobedience'
 ];
 
-let doesWordExist = function(search) {
-  let findWord = "";
-  search.includes();
+let doesWordExist = function(arrOfWords, wordToFind) {
+  if (arrOfWords.includes(wordToFind)) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+console.log(doesWordExist(wordsFind, "banana"))
 
 // Counting Repetition
 const wordsCount = [
@@ -167,6 +175,10 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+let howManyTimes = function (arrayOfwords, wordRepeated) {
+  for (let i=0; i<arrayOfwords.length; i++);
+}
 
 // Bonus
 
